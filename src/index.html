@@ -6,43 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CoffeePOS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
+
     <link rel="stylesheet" href="./index.scss">
 </head>
 
 <body>
-    <div class="root"></div>
+    <div class="container">
+        <div class="root"></div>
 
-    <template id="button-item">
+        <template id="button">
+          <div class="button-title">
+            <h1 class="button-header title is-1">원하시는 커피를 말씀해 주세요</h1>
+          </div>
+        </template>
+
+        <template id="button-item">
       <div class="button-item">
-        <button class="americano-takeout">아메리카노(테이크아웃)</button>
-        <button class="americano">아메리카노</button>
-        <button class="latte">카페라떼</button>
-        <button class="caramel">카라멜 마끼아또</button>
-        <button class="coupon__five">5% 할인</button>
-        <button class="coupon__ten">10% 할인</button>
-        <button class="pay-cash">현금결제</button>
-        <button class="pay-card">카드결제</button>
-        <div class="sum">0</div>
+        <div class="menuList">
+      <button class="is-active button is-large americano-takeout">아메리카노(테이크아웃)</button>
+      <button class="is-active button is-large americano">아메리카노</button>
+      <button class="is-active button is-large latte">카페라떼</button>
+      <button class="is-active button is-large caramel">카라멜 마끼아또</button>
       </div>
-    </template>
 
-    <template id="wait">
-      <div class="wait">
-        <h1 class="header">waitPage</h1>
+      <div class="discountList">
+      <button class="is-active button is-large coupon__five">5% 할인</button>
+      <button class="is-active button is-large coupon__ten">10% 할인</button>
       </div>
-    </template>
-
-    <template id="wait-item">
-
-      <button class="select">메뉴선택</button>
-    </template>
-
-    <template id="button">
-      <div class="button">
-        <h1 class="button-header">buttonPage</h1>
+      <div class="payList">
+      <button class="is-active button is-large pay-cash">현금결제</button>
+      <button class="is-active button is-large pay-card is-active">카드결제</button>
       </div>
-    </template>
+      <br>
+      <div class="sum title is-1">0</div>
 
+
+    </div>
+  </template>
+
+        <template id="wait">
+    <div class="wait">
+      <h1 class="header is-1 title is-1">주문을 원하시면 메뉴를 선택해 주세요</h1>
+    </div>
+  </template>
+
+        <template id="wait-item">
+          <div class="selectList">
+    <button class="select is-1 button is-large">메뉴선택</button>
+</div>
+
+  </template>
+    </div>
 
     <script src="./index.js"></script>
 </body>

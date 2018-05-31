@@ -47,25 +47,24 @@ function buttonPage(){
   americano.addEventListener('click', e=>{
     let sum = document.querySelector(".sum");
     first_Num+=1000;
-    sum.textContent = first_Num;
+    sum.textContent = "총 결제 금액은 "+ first_Num;
   })
   let takeout_num=0;
   takeOut.addEventListener('click', e=>{
     let sum = document.querySelector(".sum");
     first_Num+=500;
-    sum.textContent = first_Num;
+    sum.textContent = "총 결제 금액은 "+ first_Num;
     takeout_num++;
-    console.log(takeout_num);
   })
   latte.addEventListener('click', e=>{
     let sum = document.querySelector(".sum");
     first_Num+=1500;
-    sum.textContent = first_Num;
+    sum.textContent = "총 결제 금액은 "+ first_Num;
   })
   caramel.addEventListener('click', e=>{
     let sum = document.querySelector(".sum");
     first_Num+=2000;
-    sum.textContent = first_Num;
+    sum.textContent = "총 결제 금액은 "+ first_Num;
   })
 
   fiveDiscount.addEventListener('click', e=>{
@@ -73,8 +72,12 @@ function buttonPage(){
     if(takeout_num){
       first_Num *= 0.95;
       first_Num += takeout_num * 25;
+      alert("takeout은 할인 안되세요!");
     }
-    sum.textContent = first_Num;
+    else{
+      first_Num *= 0.95;
+    }
+    sum.textContent = "총 결제 금액은 "+ first_Num;
   })
   
   tenDiscount.addEventListener('click', e => {
@@ -82,22 +85,25 @@ function buttonPage(){
     if(takeout_num){
       first_Num *= 0.9;
       first_Num += takeout_num *50;
+      alert("takeout은 할인 안되세요!")
+    }else{
+      first_Num *= 0.9;
     }
-    sum.textContent = first_Num;
+    sum.textContent = "총 결제 금액은 "+ first_Num;
   })
 
   let count = 0;
   payCash.addEventListener('click', e => {
     let sum = document.querySelector(".sum");
       first_Num *= 0.95;
-      sum.textContent = first_Num;
+      sum.textContent = "총 결제 금액은 "+ first_Num;
        count++;
        if(count === 2){
          first_Num = 0;
          alert("결제중입니다.");
          waitPage();
        }else{
-         alert("현금결제는 5% 할인됩니다! ^^");
+         alert("현금결제는 5% 할인됩니다! ^^ 결제 버튼 한번 더 눌러주세요!");
        }}
     
   )
@@ -109,6 +115,6 @@ function buttonPage(){
     waitPage();
   })
 
-  buttonFragment.querySelector(".button").appendChild(fragment)
+  buttonFragment.querySelector(".button-title").appendChild(fragment)
   render(buttonFragment)
 }
