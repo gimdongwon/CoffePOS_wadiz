@@ -1,0 +1,29 @@
+{
+    "posts": [{
+        "id": "admin",
+        "title": "json-server",
+        "author": "typicode"
+    }],
+
+    "menu": [{
+            "id": 1,
+            "name": "americano_takeout",
+            "price": 500
+        },
+        {
+            "id": 2,
+            "name": "americono",
+            "price": 1000
+        },
+        {
+            "id": 3,
+            "name": "latte",
+            "price": 1500
+        },
+        {
+            "id": 4,
+            "name": "caramel",
+            "price": 2000
+        }
+    ]
+}

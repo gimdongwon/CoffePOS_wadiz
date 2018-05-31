@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>중간 프로젝트 템플릿</title>
-  <link rel="stylesheet" href="./index.scss">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CoffeePOS</title>
+    <link rel="stylesheet" href="./index.scss">
 </head>
+
 <body>
-  <h1>중간 프로젝트 템플릿</h1>
-  <script src="./index.js"></script>
+    <div class="root"></div>
+    <h1>coffeePost</h1>
+    <template id="menu">
+      <div class="menu">menu</div>
+  </template>
+    <template id="menu_item">
+    <div class="menu_item">
+      <div class="ameri_takeout"></div>
+      <div class="ameri"></div>
+      <div class="ratte"></div>
+      <div class="caramel"></div>
+    </div>
+  </template>
+
+    <template id="coupon">
+      <div class="coupon">coupon
+        <button class="five">5%</button>
+        <button class="ten">10%</button>
+
+      </div>
+  </template>
+
+    <template id="pay">
+      <div class="pay">pay</div>
+  </template>
+    <template id="menu_loading">
+      <div class="menu_loading">menu_loading</div>
+  </template>
+
+    <script src="./index.js"></script>
 </body>
+
 </html>
