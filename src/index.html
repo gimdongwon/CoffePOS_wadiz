@@ -11,33 +11,34 @@
 
 <body>
     <div class="root"></div>
-    <h1>coffeePost</h1>
-    <template id="menu">
-      <div class="menu">menu</div>
-  </template>
-    <template id="menu_item">
-    <div class="menu_item">
-      <div class="ameri_takeout"></div>
-      <div class="ameri"></div>
-      <div class="ratte"></div>
-      <div class="caramel"></div>
-    </div>
-  </template>
-
-    <template id="coupon">
-      <div class="coupon">coupon
-        <button class="five">5%</button>
-        <button class="ten">10%</button>
-
+    <template id="index">
+      <div class="index">
+      <h1 class="header">indexPage</h1>
       </div>
-  </template>
+    </template>
 
-    <template id="pay">
-      <div class="pay">pay</div>
-  </template>
-    <template id="menu_loading">
-      <div class="menu_loading">menu_loading</div>
-  </template>
+    <template id="index-item">
+      <!-- <p class="select"></p> -->
+      <button class="select">메뉴선택</button>
+      <button class="coupon">쿠폰</button>
+      <button class="pay">결제</button>
+    </template>
+
+    <template id="button">
+      <div class="button">
+        <h1 class="button-header">buttonPage</h1>
+      </div>
+    </template>
+
+    <template id="button-item">
+      <div class="button-item">
+        <button class="americano">아메리카노</button>
+        <button class="americano-takeout">아메리카노(테이크아웃)</button>
+        <button class="latte">카페라떼</button>
+        <button class="caramel">카라멜 마끼아또</button>
+        <div class="sum">0</div>
+      </div>
+    </template>
 
     <script src="./index.js"></script>
 </body>

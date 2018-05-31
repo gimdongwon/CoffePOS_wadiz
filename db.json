@@ -1,29 +1,54 @@
 {
-    "posts": [{
-        "id": "admin",
-        "title": "json-server",
-        "author": "typicode"
-    }],
-
-    "menu": [{
-            "id": 1,
-            "name": "americano_takeout",
-            "price": 500
-        },
-        {
-            "id": 2,
-            "name": "americono",
-            "price": 1000
-        },
-        {
-            "id": 3,
-            "name": "latte",
-            "price": 1500
-        },
-        {
-            "id": 4,
-            "name": "caramel",
-            "price": 2000
-        }
-    ]
+  "posts": [
+    {
+      "id": "admin",
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "buttons": [
+    {
+      "id": 1,
+      "title": "선택"
+    },
+    {
+      "id": 2,
+      "title": "쿠폰"
+    },
+    {
+      "id": 3,
+      "title": "결제"
+    },
+    {
+      "id": 4,
+      "title": "되랏"
+    }
+  ],
+  "menus": [
+    {
+      "id": 1,
+      "name": "아메리카노 takeout",
+      "price": 500
+    },
+    {
+      "id": 2,
+      "name": "아미리카노",
+      "price": 1000
+    },
+    {
+      "id": 3,
+      "name": "라떼",
+      "price": 1500
+    },
+    {
+      "id": 4,
+      "name": "카라멜 마끼아또",
+      "price": 2000
+    },
+    {
+      "id": 5,
+      "name": "합계",
+      "price": 0
+    }
+  ]
 }
