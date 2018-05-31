@@ -7,8 +7,8 @@ const postAPI = axios.create({
 const rootEl = document.querySelector(".root");
 
 const templates = {
-  index: document.querySelector("#index").content,
-  indexItem: document.querySelector("#index-item").content,
+  wait: document.querySelector("#wait").content,
+  waitItem: document.querySelector("#wait-item").content,
   button: document.querySelector("#button").content,
   buttonItem: document.querySelector("#button-item").content
 }
@@ -17,30 +17,21 @@ function render(fragment){
   rootEl.textContent = '';
   rootEl.appendChild(fragment);
 }
-indexPage();
-function indexPage(){
+buttonPage();
+
+function waitPage(){
   // const res = await postAPI.get(`/buttons`)
-  const indexFragment = document.importNode(templates.index, true)
-  const fragment = document.importNode(templates.indexItem, true)
+  const waitFragment = document.importNode(templates.wait, true)
+  const fragment = document.importNode(templates.waitItem, true)
   const selectBtn = fragment.querySelector(".select")
-  const couponBtn = fragment.querySelector(".coupon");
-  const payBtn = fragment.querySelector(".pay");
   selectBtn.addEventListener('click', e=>{
     buttonPage();
   })
-  couponBtn.addEventListener('click', e => {
-    couponPage();
-  })
-  payBtn.addEventListener('click', e => {
-    payPage();
-  })
-  indexFragment.querySelector(".index").appendChild(fragment)
-  render(indexFragment)
+  waitFragment.querySelector(".wait").appendChild(fragment)
+  render(waitFragment)
 }
 
-
-
-let first_Num = 0;                       
+let first_Num = 0;
 function buttonPage(){
   const buttonFragment = document.importNode(templates.button, true)
   const fragment = document.importNode(templates.buttonItem, true)
@@ -48,16 +39,23 @@ function buttonPage(){
   const takeOut = fragment.querySelector(".americano-takeout");
   const latte = fragment.querySelector(".latte")
   const caramel = fragment.querySelector(".caramel")
+  const fiveDiscount = fragment.querySelector(".coupon__five")
+  const tenDiscount = fragment.querySelector(".coupon__ten")
+  const payCash = fragment.querySelector(".pay-cash");
+  const payCard = fragment.querySelector(".pay-card");
 
   americano.addEventListener('click', e=>{
     let sum = document.querySelector(".sum");
     first_Num+=1000;
     sum.textContent = first_Num;
   })
+  let takeout_num=0;
   takeOut.addEventListener('click', e=>{
     let sum = document.querySelector(".sum");
     first_Num+=500;
     sum.textContent = first_Num;
+    takeout_num++;
+    console.log(takeout_num);
   })
   latte.addEventListener('click', e=>{
     let sum = document.querySelector(".sum");
@@ -69,16 +67,48 @@ function buttonPage(){
     first_Num+=2000;
     sum.textContent = first_Num;
   })
+
+  fiveDiscount.addEventListener('click', e=>{
+    let sum = document.querySelector(".sum");
+    if(takeout_num){
+      first_Num *= 0.95;
+      first_Num += takeout_num * 25;
+    }
+    sum.textContent = first_Num;
+  })
   
+  tenDiscount.addEventListener('click', e => {
+    let sum = document.querySelector(".sum");
+    if(takeout_num){
+      first_Num *= 0.9;
+      first_Num += takeout_num *50;
+    }
+    sum.textContent = first_Num;
+  })
+
+  let count = 0;
+  payCash.addEventListener('click', e => {
+    let sum = document.querySelector(".sum");
+      first_Num *= 0.95;
+      sum.textContent = first_Num;
+       count++;
+       if(count === 2){
+         first_Num = 0;
+         alert("결제중입니다.");
+         waitPage();
+       }else{
+         alert("현금결제는 5% 할인됩니다! ^^");
+       }}
+    
+  )
+
+  payCard.addEventListener('click', e=>{
+    let sum = document.querySelector(".sum");
+    alert("결제중입니다.")
+    first_Num = 0;
+    waitPage();
+  })
+
   buttonFragment.querySelector(".button").appendChild(fragment)
   render(buttonFragment)
-
-}
-
-function coupon() {
-  console.log("hihi")
-}
-
-function payPage(){
-  console.log("paypage");
 }

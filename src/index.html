@@ -11,17 +11,30 @@
 
 <body>
     <div class="root"></div>
-    <template id="index">
-      <div class="index">
-      <h1 class="header">indexPage</h1>
+
+    <template id="button-item">
+      <div class="button-item">
+        <button class="americano-takeout">아메리카노(테이크아웃)</button>
+        <button class="americano">아메리카노</button>
+        <button class="latte">카페라떼</button>
+        <button class="caramel">카라멜 마끼아또</button>
+        <button class="coupon__five">5% 할인</button>
+        <button class="coupon__ten">10% 할인</button>
+        <button class="pay-cash">현금결제</button>
+        <button class="pay-card">카드결제</button>
+        <div class="sum">0</div>
       </div>
     </template>
 
-    <template id="index-item">
-      <!-- <p class="select"></p> -->
+    <template id="wait">
+      <div class="wait">
+        <h1 class="header">waitPage</h1>
+      </div>
+    </template>
+
+    <template id="wait-item">
+
       <button class="select">메뉴선택</button>
-      <button class="coupon">쿠폰</button>
-      <button class="pay">결제</button>
     </template>
 
     <template id="button">
@@ -30,15 +43,6 @@
       </div>
     </template>
 
-    <template id="button-item">
-      <div class="button-item">
-        <button class="americano">아메리카노</button>
-        <button class="americano-takeout">아메리카노(테이크아웃)</button>
-        <button class="latte">카페라떼</button>
-        <button class="caramel">카라멜 마끼아또</button>
-        <div class="sum">0</div>
-      </div>
-    </template>
 
     <script src="./index.js"></script>
 </body>
